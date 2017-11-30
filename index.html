@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- THANKS https://github.com/sghall/d3-chord-diagrams !!!!!!! -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-12 text-left">
+          <div id="viz"></div>
+        </div>
+      </div>
+      <div class="row content">
+        <div class="col-sm-12 text-left">
+          <div id="tab">
+            <p><b>Grupo 1</b>: INIA, Centros Extensionismo, Chilealimentos, Ecoparra SPA,
+              Viñas de Guarilihue, CoopVit Cerro Negro Quillón, Viña Errázuriz Dominguez,
+              UConcepción, UCDavis, Gesproinnova, FEDEFRUTA, INDUPAN, Comité Arrocero Otingue,
+              Comité Arroz Millauquen Unido, Comité Crucero de Buli, Comités Campesinos Arroz,
+              Arroceros Unicaven, CET-AProcesados, FI Agrícola UConce, CDT Agroindustrial UConce, Frusexta, TA-Fruti,
+              UCENTRAL, Fruséptima, APÑuble, Hortifrut, ASOEX, TAccionCultural, CRRecolectoresVIII, ForestalArauco,
+              INCuBA, AIMPLAS, SUNENERGREEN</p>
+            <p><b>Grupo 2</b>:MINEDUC,CONICYT,INIA - La Cruz,CREAS,UV,Gob Reg Valparaíso,INIA - Raihuén,CEAP,Sugal,UCMAULE,
+              Gob Reg Maule,L3,Maturana y Ortega,UIBC,UTFSM,ULosAndes,Sopraval,
+Nueces del Choapa,
+Fraunhofer Chile,
+Viña Santa Rita,
+Happy Plum,
+UAndrésBello,
+FcuatroF,
+Laboratorio Movil,
+FrutiCentroNorte,
+PUCV,
+Biofrutales,
+Manki,
+Milanese,
+ChacabucoInv,
+RanchoAzul,
+SouthHemp,
+Leitat Chile</p>
+            <p><b>Grupo 3</b>:
+FIA,
+PolosTerritoriales,
+CORFO,
+PIA+S,
+GDC,
+Apoyo Proyectos Inversion Tecnológica,
+Consorcio Lechero,
+SAG,
+Bienes Públicos,
+MINECON,
+Apoyo Proyectos Estratégicos,
+Tres Columnas,
+CHILEOLIVA,
+ODEPA,
+ASPROCER,
+ACHIPIA,
+COPEVAL,
+Beitia y García,
+TA,
+Nodo,
+Fundación Chile,
+INIA - Quilamapu,
+CIREN,
+MINAGRI,
+SEREMI MINAGRI BIOBIO,
+TA-CE,
+PROCHILE,
+INVESTCHILE,
+eCERT,
+TA-VIP</p>
+            <p><b>Grupo 4</b>:
+UCHILE,
+FAVET-UCHILE,
+ContaQuim,
+ContaQuim-CTS,
+RedApicola,
+ANVET,
+AFIPA,
+PEROHiggins,
+CET Hortícola UChile,
+UNAF,
+INDAP,
+EstándarAF-CTS,
+ALIMSA,
+PERMaule,
+CAPCHICAL,
+SOCHITAL,
+SERCOTEC,
+Subsecretaría Economía,
+EstándarNC-CTS,
+APROLECHE,
+ANIC,
+PERLosRíos,
+CE Rosario,
+CPL,
+EstándarNC,
+INTA,
+ECOTERRA,
+AGRICOVIAL,
+AChoapa,
+F Min Los Pelambres</p>
+            <p><b>Grupo 5</b>:
+stándarAF,
+CETA,
+UTALCA,
+DICTUC,
+PUC,
+AB Chile,
+Härting,
+GCT,
+Centros Tecnológicos,
+Programas Tecnológicos,
+CO-INVENTA,
+CleanEnergy,
+Achoapa,
+IslaNatura,
+Samfood,
+AG Industriales Plástico,
+UTMetropolitana,
+FrutiCentroSur,
+CTIHortofrutícola,
+FDF,
+Solutec,
+Dueik</p>
+            <p><b>Grupo 6</b>:
+CCF,
+SUBPESCA,
+TA-Process,
+Subdirección Innovación UCHILE,
+Granotec,
+Nutrapharm,
+Contexto Ciudadano,
+Carozzi,
+SONAPESCA,
+IFAN,
+Prinal,
+PF,
+Quillayes,
+UMagallanes,
+ChileBotanics,
+PigmentosNaturales,
+Watts,
+Gelymar</p>
+            <p><b>Grupo 7</b>:
+I+D Empresarial,
+L2,
+L1,
+Team Foods,
+SPS,
+Lacteos Los Puquios,
+Quimas,
+Surfrut,
+CASOL,
+AcuaFood,
+José Antonio Galilea Vidaurre,
+Jaime Taladriz Canseco,
+CT Agrícola Lda,
+Luisa Maria,
+Aiguasol,
+ASEMAFOR,
+Gourmet Ltda</p>
+            <p><b>Grupo 8</b>:
+C. JC Sleman A,
+NativeFood,
+I+D Empresarial FIA,
+Robinson Crusoe,
+GoodFood4U,
+Comercial CJ,
+Fco Fuentes C.,
+Ecocrea,
+Biofresco,
+Bioingemar,
+Epullen,
+UBIOBIO,
+TribusFungi,
+LofKumikir,
+Ecotierra,
+R2B Catalyst,
+GMTFOODS</p>
+            <p><b>Grupo 9</b>:
+Innova,
+P Fortalecimiento Capacidades,
+ProgDifTec,
+PPT,
+PDT,
+Codesser,
+CHILENUT,
+AGRYD,
+EUROCHILE,
+DAYENU Ltda,
+Papa Chile,
+FECHIPAN,
+RedAgrícola,
+Viña Santa Carolina,
+Abud Sittler,
+FMed-UCHILE</p>
+            <p><b>Grupo 10</b>:
+MINSAL,
+Sub Redes Asistenciales MINSAL,
+CERES BCA,
+Subsecretaría Agricultura,
+INN,
+USACH,
+División Políticas Públicas MINSAL,
+SNILabsAS,
+SNILabsAS-CTS,
+SERNAPESCA,
+ISP</p>
+            <p><b>Grupo 11</b>:
+UFRO,
+FrutiSur,
+CEAF,
+UAustral,
+Copefrut,
+Novaseed,
+SocGenSemPapas,
+Papas Arcoiris,
+CecinasLoncoche,
+DonQueco,
+HICAR</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="tooltip"></div>
+    <script src="js/d3.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/mapper.js"></script>
+    <script src="js/chord.js"></script>
+  </body>
+</html>

@@ -1,2 +1,2 @@
-# pias-red
-Chord diagram
+# pias-grupos-investigacion
+Visualizacion pre-final.
